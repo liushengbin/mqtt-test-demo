@@ -10,7 +10,7 @@ import org.springframework.util.StringUtils;
 import java.nio.charset.StandardCharsets;
 
 /**
- * 基于paho mqtt5版本 mqtt消费者
+ * paho client mqtt5 Subscriber
  *
  * @author liushengbin
  * @since 2023-05-10
@@ -91,7 +91,7 @@ public class Mqtt5Subscriber {
         }
         try {
             client.subscribe(topic, 1);
-            System.out.println("topic 订阅完成");
+            System.out.println("topic subscribe complete");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
