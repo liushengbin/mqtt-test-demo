@@ -13,7 +13,7 @@ import org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence;
 @Slf4j
 public class Mqtt3Subscriber {
 
-    private MqttAsyncClient mqttClient;
+    private MqttClient mqttClient;
 
     private String serverUri;
     private String clientId;
@@ -46,7 +46,7 @@ public class Mqtt3Subscriber {
 
     private void connect() throws MqttException {
         MqttDefaultFilePersistence persistence = new MqttDefaultFilePersistence();
-        mqttClient = new MqttAsyncClient(serverUri, clientId, persistence);
+        mqttClient = new MqttClient(serverUri, clientId, persistence);
         mqttClient.setCallback(new MqttCallbackExtended() {
             @Override
             public void connectComplete(boolean reconnect, String serverURI) {
